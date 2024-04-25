@@ -11,6 +11,29 @@ Go언어(Golang)을 이용한 한글 오토메이션 패키지
 
 ## 2. 시작하기
 
+### 2.1. 설치
+
+```bash
+go get github.com/b612nightsky/gohwp
+```
+
+### 2.2. HWP 새창 띄우기
+```go
+package main
+
+import (
+	"github.com/b612nightsky/gohwp"
+)
+
+func main() {
+  hwp := gohwp.Initialize()   // 초기화
+  defer hwp.UnInitialize()
+  hwp.ShowWindow(true)        // hwp문서창 보이기
+  hwp.InsertText("안녕하세요") // 문자입력
+}
+
+```
+
 ## 3. 액션(Action) 사용
 
 ### 3.1. 파라미터 세트이 없어도 되는 액션
