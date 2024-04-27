@@ -9,6 +9,9 @@ Go언어(Golang)을 이용한 한글 오토메이션 패키지
   * [HwpAutomation.pdf](https://github.com/hancom-io/devcenter-archive/raw/main/hwp-automation/HwpAutomation.pdf)
   * [ParameterSetObject.pdf](https://github.com/hancom-io/devcenter-archive/raw/main/hwp-automation/ParameterSetObject.pdf)
 
+* 나름대로 이용하는 방법을 블로그에 하나씩 기록으로 남기려 하고 있습니다.
+  * [https://www.byul.pe.kr](https://www.byul.pe.kr/search/label/Go%EC%96%B8%EC%96%B4%3A%20HWP)
+
 ## 2. 시작하기
 
 ※ gohwp는 Go 1.18 이상이여야 합니다.
@@ -38,7 +41,7 @@ func main() {
 
 ## 3. 액션(Action) 사용
 
-### 3.1. 파라미터 세트이 없어도 되는 액션
+### 3.1. 파라미터 세트가 없어도 되는 액션
 
 #### 3.1.1. Run 메서드
 파라미터 값이 따로 있을 필요가 없는 액션들은 [ActionObject.pdf](https://github.com/hancom-io/devcenter-archive/raw/main/hwp-automation/ActionObject.pdf)에서 필요한 액션 이름을 찾아서 Run 메서드를 이용하면 됩니다.
@@ -73,8 +76,8 @@ hwp.ActionObject().ActionEdit().MoveDocBegin()
 ```
 이는 결국 Run 메서드를 이용하는 것이고, 다만 문자열로 된 액션 이름을 모두 외울 수 없기에 각각 메서드로 만들어 놓은 것입니다.
 
-### 3.2. 파라미터 세트이 있어야 하는 액션
-파라미터 세트이 있어야 하는 액션을 실행하는 방법은 아래와 같이 여러 방법이 있습니다. 아래 예제 모두 동일한 파라미터로 동일한 액션을 실행하고 있습니다.
+### 3.2. 파라미터 세트가 있어야 하는 액션
+파라미터 세트가 있어야 하는 액션을 실행하는 방법은 아래와 같이 여러 방법이 있습니다. 아래 예제 모두 동일한 파라미터로 동일한 액션을 실행하고 있습니다.
 
 #### 3.2.1. HAction
 
