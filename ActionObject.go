@@ -6256,6 +6256,32 @@ func (p *ActionTable) TableSwap(arg ...interface{}) {
 }
 
 /*
+ActionTable:TableLowerCell
+    아래 셀
+    셀 선택 후 위 아래로 올리고 내릴때
+*/
+func (p *ActionTable) TableLowerCell() {
+	p.hwp.Run("TableLowerCell")
+}
+
+/*
+ActionTable:TableUpperCell
+    윗 셀
+    셀 선택 후 위 아래로 올리고 내릴때
+*/
+func (p *ActionTable) TableUpperCell() {
+	p.hwp.Run("TableUpperCell")
+}
+
+/*
+ActionTable:TableCellBorderNo
+    표 셀 선 제거
+*/
+func (p *ActionTable) TableCellBorderNo() {
+	p.hwp.Run("TableCellBorderNo")
+}
+
+/*
 ActionDraw:ShapeObjAttrDialog
     특 속성 환경 설정
     파라미터셋: ShapeObject

@@ -1268,3 +1268,14 @@ func (hwp *IHwpObject) HwpLineType(s string) uint16 {
 	}
 	return uint16(res.Value().(int32))
 }
+
+/*
+RGBColor
+*/
+func (hwp *IHwpObject) RGBColor(r, g, b int32) int32 {
+	res, err := oleutil.CallMethod(hwp.dispatch, "RGBColor", r, g, b)
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(int32)
+}
