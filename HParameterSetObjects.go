@@ -7811,8 +7811,8 @@ func (p *HDrawFillAttr) WinBrushHatchColor(v ...uint32) int {
 /*
 브러쉬 선 긋기 스타일
 */
-func (p *HDrawFillAttr) WinBrushFaceType(v ...int16) int {
-	return funcParaSetInt(p.variant, "WinBrushFaceType", v)
+func (p *HDrawFillAttr) WinBrushFaceStyle(v ...int16) int {
+	return funcParaSetInt(p.variant, "WinBrushFaceStyle", v)
 }
 
 /*
