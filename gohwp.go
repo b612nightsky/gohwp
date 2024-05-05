@@ -20,7 +20,7 @@ func Initialize() *IHwpObject {
 	var hwp IHwpObject
 
 	// OLE 시스템 초기화
-	err := ole.CoInitialize(0)
+	err := ole.CoInitializeEx(0, ole.COINIT_MULTITHREADED)
 	if err != nil {
 		panic(err)
 	}
