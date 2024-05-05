@@ -1279,3 +1279,14 @@ func (hwp *IHwpObject) RGBColor(r, g, b int32) int32 {
 	}
 	return res.Value().(int32)
 }
+
+/*
+PointToHwpUnit
+*/
+func (hwp *IHwpObject) PointToHwpUnit(p int32) int32 {
+	res, err := oleutil.CallMethod(hwp.dispatch, "PointToHwpUnit", p)
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(int32)
+}
