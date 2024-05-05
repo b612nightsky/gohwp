@@ -1290,3 +1290,25 @@ func (hwp *IHwpObject) PointToHwpUnit(p int32) int32 {
 	}
 	return res.Value().(int32)
 }
+
+/*
+BrushType
+*/
+func (hwp *IHwpObject) BrushType(s string) int32 {
+	res, err := oleutil.CallMethod(hwp.dispatch, "BrushType", s)
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(int32)
+}
+
+/*
+HatchStyle
+*/
+func (hwp *IHwpObject) HatchStyle(s string) int32 {
+	res, err := oleutil.CallMethod(hwp.dispatch, "HatchStyle", s)
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(int32)
+}
