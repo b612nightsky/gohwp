@@ -6282,6 +6282,54 @@ func (p *ActionTable) TableCellBorderNo() {
 }
 
 /*
+ActionTable:TableCellBorderTop
+    표 셀 선 Top
+*/
+func (p *ActionTable) TableCellBorderTop() {
+	p.hwp.Run("TableCellBorderTop")
+}
+
+/*
+ActionTable:TableCellBorderBottom
+    표 셀 선 Bottom
+*/
+func (p *ActionTable) TableCellBorderBottom() {
+	p.hwp.Run("TableCellBorderBottom")
+}
+
+/*
+ActionTable:TableCellBorderLeft
+    표 셀 선 Left
+*/
+func (p *ActionTable) TableCellBorderLeft() {
+	p.hwp.Run("TableCellBorderLeft")
+}
+
+/*
+ActionTable:TableCellBorderRight
+    표 셀 선 Right
+*/
+func (p *ActionTable) TableCellBorderRight() {
+	p.hwp.Run("TableCellBorderRight")
+}
+
+/*
+ActionTable:TableCellBorderDiagonalDown
+    표 셀 선 DiagonalDown
+*/
+func (p *ActionTable) TableCellBorderDiagonalDown() {
+	p.hwp.Run("TableCellBorderDiagonalDown")
+}
+
+/*
+ActionTable:TableCellBorderDiagonalUp
+    표 셀 선 DiagonalUp
+*/
+func (p *ActionTable) TableCellBorderDiagonalUp() {
+	p.hwp.Run("TableCellBorderDiagonalUp")
+}
+
+/*
 ActionDraw:ShapeObjAttrDialog
     특 속성 환경 설정
     파라미터셋: ShapeObject

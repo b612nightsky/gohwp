@@ -1312,3 +1312,29 @@ func (hwp *IHwpObject) HatchStyle(s string) int32 {
 	}
 	return res.Value().(int32)
 }
+
+/*
+HwpLineWidth
+
+	ex> HwpLineWidth("3.0mm")
+*/
+func (hwp *IHwpObject) HwpLineWidth(s string) int32 {
+	res, err := oleutil.CallMethod(hwp.dispatch, "HwpLineWidth", s)
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(int32)
+}
+
+/*
+GetHeadingString
+
+	글머리표/문단번호/개요번호를 추출한다.
+*/
+func (hwp *IHwpObject) GetHeadingString() string {
+	res, err := oleutil.CallMethod(hwp.dispatch, "GetHeadingString")
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(string)
+}
