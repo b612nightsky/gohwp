@@ -96,6 +96,25 @@ func (hwp *IHwpObject) GetPosU() (list int, para int, pos int) {
 }
 
 /*
+현재 설정된 블록의 위치정보를 얻어온다.
+
+	slist: 설정된 블록의 시작 리스트 아이디.
+	spara: 설정된 블록의 시작 문단 아이디.
+	spos: 설정된 블록의 문단 내 시작 글자 단위 위치.
+	elist: 설정된 블록의 끝 리스트 아이디.
+	epara: 설정된 블록의 끝 문단 아이디.
+	epos: 설정된 블록의 문단 내 끝 글자 단위 위치.
+*/
+func (hwp *IHwpObject) GetSelectedPosU() (slist, spara, spos, elist, epara, epos int) {
+	var slisti, sparai, sposi, elisti, eparai, eposi int
+	_, err := oleutil.CallMethod(hwp.dispatch, "GetSelectedPos", &slisti, &sparai, &sposi, &elisti, &eparai, &eposi)
+	if err != nil {
+		panic(err)
+	}
+	return slisti, sparai, sposi, elisti, eparai, eposi
+}
+
+/*
 상태바에 나타날 정보를 알아낸다.
 
 	seccnt: 총 구역, secno: 현재 구역, prnpageno: 쪽, colno: 단

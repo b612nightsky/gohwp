@@ -1338,3 +1338,20 @@ func (hwp *IHwpObject) GetHeadingString() string {
 	}
 	return res.Value().(string)
 }
+
+/*
+현재 설정된 블록의 위치정보를 얻어온다.
+
+	slist: 설정된 블록의 시작 리스트 아이디.
+	spara: 설정된 블록의 시작 문단 아이디.
+	spos: 설정된 블록의 문단 내 시작 글자 단위 위치.
+	elist: 설정된 블록의 끝 리스트 아이디.
+	epara: 설정된 블록의 끝 문단 아이디.
+	epos: 설정된 블록의 문단 내 끝 글자 단위 위치.
+*/
+func (hwp *IHwpObject) GetSelectedPos(slist, spara, spos, elist, epara, epos *int) {
+	_, err := oleutil.CallMethod(hwp.dispatch, "GetSelectedPos", slist, spara, spos, elist, epara, epos)
+	if err != nil {
+		panic(err)
+	}
+}
