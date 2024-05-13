@@ -6330,6 +6330,14 @@ func (p *ActionTable) TableCellBorderInside() {
 }
 
 /*
+ActionTable:TableCellBorderOutside
+    표 셀 선 Outside
+*/
+func (p *ActionTable) TableCellBorderOutside() {
+	p.hwp.Run("TableCellBorderOutside")
+}
+
+/*
 ActionTable:TableCellBorderInsideVert
     표 셀 선 InsideVert
 */
