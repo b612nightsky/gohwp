@@ -6314,6 +6314,38 @@ func (p *ActionTable) TableCellBorderRight() {
 }
 
 /*
+ActionTable:TableCellBorderAll
+    표 셀 선 All
+*/
+func (p *ActionTable) TableCellBorderAll() {
+	p.hwp.Run("TableCellBorderAll")
+}
+
+/*
+ActionTable:TableCellBorderInside
+    표 셀 선 Inside
+*/
+func (p *ActionTable) TableCellBorderInside() {
+	p.hwp.Run("TableCellBorderInside")
+}
+
+/*
+ActionTable:TableCellBorderInsideVert
+    표 셀 선 InsideVert
+*/
+func (p *ActionTable) TableCellBorderInsideVert() {
+	p.hwp.Run("TableCellBorderInsideVert")
+}
+
+/*
+ActionTable:TableCellBorderInsideHorz
+    표 셀 선 InsideHorz
+*/
+func (p *ActionTable) TableCellBorderInsideHorz() {
+	p.hwp.Run("TableCellBorderInsideHorz")
+}
+
+/*
 ActionTable:TableCellBorderDiagonalDown
     표 셀 선 DiagonalDown
 */
