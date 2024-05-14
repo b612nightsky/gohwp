@@ -43,6 +43,7 @@ func (hwp *IHwpObject) ActionWithParameters(actName string, paras ...interface{}
 		}
 	}
 	act.Execute(para)
+	act, para = nil, nil
 }
 
 /*
