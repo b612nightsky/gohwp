@@ -106,13 +106,13 @@ func (hwp *IHwpObject) GetPosU() (list int, para int, pos int) {
 	epara: 설정된 블록의 끝 문단 아이디.
 	epos: 설정된 블록의 문단 내 끝 글자 단위 위치.
 */
-func (hwp *IHwpObject) GetSelectedPosU() (slist, spara, spos, elist, epara, epos int) {
+func (hwp *IHwpObject) GetSelectedPosU() (slist, spara, spos, elist, epara, epos int, b bool) {
 	var slisti, sparai, sposi, elisti, eparai, eposi int
-	_, err := oleutil.CallMethod(hwp.dispatch, "GetSelectedPos", &slisti, &sparai, &sposi, &elisti, &eparai, &eposi)
+	res, err := oleutil.CallMethod(hwp.dispatch, "GetSelectedPos", &slisti, &sparai, &sposi, &elisti, &eparai, &eposi)
 	if err != nil {
 		panic(err)
 	}
-	return slisti, sparai, sposi, elisti, eparai, eposi
+	return slisti, sparai, sposi, elisti, eparai, eposi, res.Value().(bool)
 }
 
 /*

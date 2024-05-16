@@ -1349,11 +1349,12 @@ func (hwp *IHwpObject) GetHeadingString() string {
 	epara: 설정된 블록의 끝 문단 아이디.
 	epos: 설정된 블록의 문단 내 끝 글자 단위 위치.
 */
-func (hwp *IHwpObject) GetSelectedPos(slist, spara, spos, elist, epara, epos *int) {
-	_, err := oleutil.CallMethod(hwp.dispatch, "GetSelectedPos", slist, spara, spos, elist, epara, epos)
+func (hwp *IHwpObject) GetSelectedPos(slist, spara, spos, elist, epara, epos *int) bool {
+	res, err := oleutil.CallMethod(hwp.dispatch, "GetSelectedPos", slist, spara, spos, elist, epara, epos)
 	if err != nil {
 		panic(err)
 	}
+	return res.Value().(bool)
 }
 
 /*
