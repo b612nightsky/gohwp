@@ -1355,3 +1355,16 @@ func (hwp *IHwpObject) GetSelectedPos(slist, spara, spos, elist, epara, epos *in
 		panic(err)
 	}
 }
+
+/*
+Slash
+
+	ex> Slash("OneLine")
+*/
+func (hwp *IHwpObject) Slash(s string) int32 {
+	res, err := oleutil.CallMethod(hwp.dispatch, "Slash", s)
+	if err != nil {
+		panic(err)
+	}
+	return res.Value().(int32)
+}
