@@ -5224,6 +5224,20 @@ func (p *HCellBorderFill) BorderTypeBottom(v ...uint16) int {
 }
 
 /*
+테두리 종류 내부 수직
+*/
+func (p *HCellBorderFill) TypeVert(v ...uint16) int {
+	return funcParaSetInt(p.variant, "TypeVert", v)
+}
+
+/*
+테두리 종류 내부 수평
+*/
+func (p *HCellBorderFill) TypeHorz(v ...uint16) int {
+	return funcParaSetInt(p.variant, "TypeHorz", v)
+}
+
+/*
 4방향 테두리 두께 왼쪽
 */
 func (p *HCellBorderFill) BorderWidthLeft(v ...uint16) int {
@@ -5252,6 +5266,20 @@ func (p *HCellBorderFill) BorderWidthBottom(v ...uint16) int {
 }
 
 /*
+테두리 두께 내부 수직
+*/
+func (p *HCellBorderFill) WidthVert(v ...uint16) int {
+	return funcParaSetInt(p.variant, "WidthVert", v)
+}
+
+/*
+테두리 두께 내부 수평
+*/
+func (p *HCellBorderFill) WidthHorz(v ...uint16) int {
+	return funcParaSetInt(p.variant, "WidthHorz", v)
+}
+
+/*
 4방향 테두리 색깔 : 왼쪽 RGB color를 나타내기 위한 32비트 값 (0x00bbggrr)
 */
 func (p *HCellBorderFill) BorderCorlorLeft(v ...uint32) int {
@@ -5277,6 +5305,20 @@ func (p *HCellBorderFill) BorderColorTop(v ...uint32) int {
 */
 func (p *HCellBorderFill) BorderColorBottom(v ...uint32) int {
 	return funcParaSetInt(p.variant, "BorderColorBottom", v)
+}
+
+/*
+테두리 색깔 : 내부 수직 RGB color를 나타내기 위한 32비트 값 (0x00bbggrr)
+*/
+func (p *HCellBorderFill) ColorVert(v ...uint32) int {
+	return funcParaSetInt(p.variant, "ColorVert", v)
+}
+
+/*
+테두리 색깔 : 내부 수평 RGB color를 나타내기 위한 32비트 값 (0x00bbggrr)
+*/
+func (p *HCellBorderFill) ColorHorz(v ...uint32) int {
+	return funcParaSetInt(p.variant, "ColorHorz", v)
 }
 
 /*
